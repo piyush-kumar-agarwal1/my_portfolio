@@ -1,18 +1,18 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { splitVendorChunkPlugin } from 'vite'
-import { compression } from 'vite-plugin-compression'
+import viteCompression from 'vite-plugin-compression'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     splitVendorChunkPlugin(),
-    compression({
+    viteCompression({
       algorithm: 'brotliCompress',
       ext: '.br',
     }),
-    compression({
+    viteCompression({
       algorithm: 'gzip',
       ext: '.gz',
     })
