@@ -20,7 +20,7 @@ const Tech = () => {
         {technologies.map((technology) => (
           <div className='w-28 h-28 group relative' key={technology.name}>
             {/* The 3D ball */}
-            <BallCanvas icon={technology.icon} />
+            <BallCanvas icon={technology.icon} name={technology.name} />
 
             {/* Tooltip that appears on hover */}
             <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 
