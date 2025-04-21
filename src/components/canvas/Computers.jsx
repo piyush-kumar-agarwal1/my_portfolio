@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf", true);
+  const computer = useGLTF("/models/desktop_pc/scene.gltf", true);
   // Enable draco compression to reduce model size
   computer.scene.traverse((child) => {
     if (child.isMesh) {
