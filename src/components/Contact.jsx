@@ -23,30 +23,31 @@ const Notification = ({ type, message, onClose }) => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className={`fixed top-24 left-1/2 transform -translate-x-1/2 z-50 px-6 py-4 rounded-xl shadow-xl 
+      className={`fixed sm:top-24 top-16 left-1/2 transform -translate-x-1/2 z-50 
+                sm:px-6 px-4 sm:py-4 py-3 rounded-xl shadow-xl 
                 ${type === "success" ? "bg-[#1a3d2a] border-l-4 border-[#4ade80]" :
           "bg-[#3d1a1a] border-l-4 border-[#f87171]"}
-                max-w-md w-full flex items-start`}
+                sm:max-w-md w-[92%] sm:w-full flex items-start`}
     >
-      <div className="mr-4 flex-shrink-0 pt-0.5">
+      <div className="mr-2 sm:mr-4 flex-shrink-0 pt-0.5">
         {type === "success" ? (
-          <svg className="h-6 w-6 text-[#4ade80]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="h-5 w-5 sm:h-6 sm:w-6 text-[#4ade80]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
           </svg>
         ) : (
-          <svg className="h-6 w-6 text-[#f87171]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="h-5 w-5 sm:h-6 sm:w-6 text-[#f87171]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         )}
       </div>
       <div className="flex-1">
-        <p className={`text-lg font-medium ${type === "success" ? "text-[#4ade80]" : "text-[#f87171]"}`}>
+        <p className={`sm:text-lg text-base font-medium ${type === "success" ? "text-[#4ade80]" : "text-[#f87171]"}`}>
           {type === "success" ? "Message Sent!" : "Error"}
         </p>
-        <p className="mt-1 text-white">{message}</p>
+        <p className="mt-1 text-white text-sm sm:text-base">{message}</p>
       </div>
-      <button onClick={onClose} className="flex-shrink-0 ml-4">
-        <svg className="h-5 w-5 text-gray-400 hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <button onClick={onClose} className="flex-shrink-0 ml-2 sm:ml-4">
+        <svg className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
