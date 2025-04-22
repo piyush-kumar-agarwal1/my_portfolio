@@ -202,3 +202,48 @@
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .hash-span {
+    margin-top: -80px;
+    padding-bottom: 80px;
+  }
+}
+
+/* Add these styles at the end of your existing CSS */
+
+/* Canvas positioning fixes */
+canvas {
+  display: block;
+}
+
+#heroCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 750px) {
+  .computer-section {
+    height: 60vh !important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+  }
+}
+/* Add these styles - they only affect mobile devices */
+@media (max-width: 750px) {
+  /* Mobile-specific optimizations that don't affect desktop */
+  #computer-canvas-container {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Adjust mobile computer scaling */
+  #computer-canvas-container canvas {
+    touch-action: none;
+  }
+}
