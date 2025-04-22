@@ -23,11 +23,11 @@ const Notification = ({ type, message, onClose }) => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className={`fixed sm:top-24 top-16 left-1/2 transform -translate-x-1/2 z-50 
+      className={`fixed sm:top-24 top-[4.5rem] left-1/2 transform -translate-x-1/2 z-50 
                 sm:px-6 px-4 sm:py-4 py-3 rounded-xl shadow-xl 
                 ${type === "success" ? "bg-[#1a3d2a] border-l-4 border-[#4ade80]" :
           "bg-[#3d1a1a] border-l-4 border-[#f87171]"}
-                sm:max-w-md w-[92%] sm:w-full flex items-start`}
+                max-w-[92%] sm:max-w-md w-auto sm:w-full flex items-start`}
     >
       <div className="mr-2 sm:mr-4 flex-shrink-0 pt-0.5">
         {type === "success" ? (
