@@ -43,7 +43,7 @@ const Hero = () => {
 
       {/* Computer model container - KEEPING DESKTOP VIEW UNTOUCHED */}
       <div className={`
-        ${isMobile ? 'absolute bottom-32 left-0 right-0 h-[45vh] max-h-[250px]' : 'absolute w-full bottom-0 h-[70vh]'}
+        ${isMobile ? 'absolute bottom-32 left-0 right-0 h-[45vh] max-h-[250px]' : 'absolute w-full bottom-0 h-[75vh]'}
         flex items-center justify-center
       `}>
         <ComputersCanvas />

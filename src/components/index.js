@@ -9,6 +9,7 @@ import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import ScrollToTop from "./ScrollToTop"; // Make sure this is imported
+import Certifications from "./Certifications"; // Add this import
 
 export {
   Hero,
@@ -17,6 +18,7 @@ export {
   Tech,
   Experience,
   Works,
+  Certifications,
   Feedbacks,
   Contact,
   CanvasLoader,

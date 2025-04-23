@@ -6,6 +6,8 @@ import { Navbar, Hero } from "./components";
 const About = lazy(() => import("./components/About"));
 const Tech = lazy(() => import("./components/Tech"));
 const Works = lazy(() => import("./components/Works"));
+// Add this new import
+const Certifications = lazy(() => import("./components/Certifications"));
 const Contact = lazy(() => import("./components/Contact"));
 const StarsCanvas = lazy(() => import("./components/canvas/Stars").then(module => ({ default: module.default })));
 const ScrollToTop = lazy(() => import("./components/ScrollToTop"));
@@ -33,6 +35,10 @@ const App = () => {
         </Suspense>
         <Suspense fallback={<Loading />}>
           <Works />
+        </Suspense>
+        {/* Add the Certifications component here */}
+        <Suspense fallback={<Loading />}>
+          <Certifications />
         </Suspense>
         <div className='relative z-0'>
           <Suspense fallback={<Loading />}>

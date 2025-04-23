@@ -39,6 +39,11 @@ import notemate from "./notemate.png";
 import voting from "./voting.png";
 import clothing from "./clothing.png";
 
+// Add these imports at the top with your other imports
+import coursera from "./coursera.png";
+import nptel from "./nptel.png";
+import linkedin from "./linkedin.png";
+
 export {
   logo,
   backend,
@@ -76,4 +81,7 @@ export {
   clothing,
   notemate,
   voting,
+  coursera,
+  nptel,
+  linkedin,
 };
