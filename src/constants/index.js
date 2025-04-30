@@ -229,8 +229,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: leetcode, // Replace with leetcode extension screenshot
+    image: leetcode,
     source_code_link: "https://github.com/piyush-kumar-agarwal1/leetcode-helper",
+    live_site_link: "https://leetcode-buddyy.vercel.app/"
   },
   {
     name: "Break Your Boredom",
@@ -254,8 +255,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: bob, // Replace with break your boredom screenshot
+    image: bob,
     source_code_link: "https://github.com/piyush-kumar-agarwal1/break-your-boredom",
+    live_site_link: "https://break-your-boredom.vercel.app/"
   },
   {
     name: "E-Learning Platform",
@@ -279,7 +281,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: elearning, // Replace with e-learning platform screenshot
+    image: elearning,
     source_code_link: "https://github.com/piyush-kumar-agarwal1/elearning-platform",
   },
   {
@@ -304,8 +306,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: voting, // Replace with your voting system image
+    image: voting,
     source_code_link: "https://github.com/piyush-kumar-agarwal1/online-voting-system",
+    live_site_link: "https://online-voting-system-delta.vercel.app/"
   },
   {
     name: "Notemate",
@@ -329,8 +332,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: notemate, // Replace with your notemate image
+    image: notemate,
     source_code_link: "https://github.com/piyush-kumar-agarwal1/notemate",
+    live_site_link: "https://note-mate-delta.vercel.app/"
   },
   {
     name: "Online Clothing Store",
@@ -354,7 +358,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: clothing, // Replace with your clothing store image
+    image: clothing,
     source_code_link: "https://github.com/piyush-kumar-agarwal1/online-clothing-store",
   },
 ];

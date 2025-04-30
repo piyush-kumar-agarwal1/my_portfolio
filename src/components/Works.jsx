@@ -15,6 +15,7 @@ const MobileProjectCard = ({
   tags,
   image,
   source_code_link,
+  live_site_link,
 }) => {
   return (
     <div className='bg-tertiary p-5 rounded-2xl w-full mb-7'>
@@ -23,7 +24,7 @@ const MobileProjectCard = ({
           src={image}
           alt={name}
           className='w-full h-full object-cover rounded-2xl'
-          loading="lazy" // Add lazy loading
+          loading="lazy"
         />
 
         <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
@@ -41,7 +42,18 @@ const MobileProjectCard = ({
       </div>
 
       <div className='mt-5'>
-        <h3 className='text-white font-bold text-[20px]'>{name}</h3>
+        {live_site_link ? (
+          <a
+            href={live_site_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className='text-white font-bold text-[20px] hover:text-[#915EFF] transition-colors'
+          >
+            {name}
+          </a>
+        ) : (
+          <h3 className='text-white font-bold text-[20px]'>{name}</h3>
+        )}
         <p className='mt-2 text-secondary text-[12px]'>{description}</p>
       </div>
 
@@ -66,6 +78,7 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  live_site_link,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -82,7 +95,7 @@ const ProjectCard = ({
             src={image}
             alt={name}
             className='w-full h-full object-cover rounded-2xl'
-            loading="lazy" // Add lazy loading
+            loading="lazy"
           />
 
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
@@ -100,7 +113,21 @@ const ProjectCard = ({
         </div>
 
         <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
+          {live_site_link ? (
+            <a
+              href={live_site_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className='text-white font-bold text-[24px] hover:text-[#915EFF] transition-colors flex items-center'
+            >
+              {name}
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          ) : (
+            <h3 className='text-white font-bold text-[24px]'>{name}</h3>
+          )}
           <p className='mt-2 text-secondary text-[14px]'>{description}</p>
         </div>
 
