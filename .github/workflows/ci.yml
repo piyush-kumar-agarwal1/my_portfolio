@@ -49,12 +49,12 @@ jobs:
       - name: Build Docker image
         run: |
           echo "Building Docker image..."
-          docker build -t piyush296/my-portfolio:latest .
+          docker build -t apiyush296/my-portfolio:latest .
           
       - name: Test Docker container
         run: |
           echo "Testing container..."
-          docker run -d --name test-portfolio -p 8080:80 piyush296/my-portfolio:latest
+          docker run -d --name test-portfolio -p 8080:80 apiyush296/my-portfolio:latest
           sleep 10
           docker ps
           docker stop test-portfolio
@@ -65,7 +65,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         run: |
           echo "Pushing to Docker Hub..."
-          docker push piyush296/my-portfolio:latest
+          docker push apiyush296/my-portfolio:latest
           echo "Docker image pushed!"
 
   check-deployment:
