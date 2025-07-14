@@ -1,0 +1,59 @@
+name: Portfolio CI/CD
+
+on:
+  push:
+    branches: [master, develop]  # Changed from 'main' to 'master'
+  pull_request:
+    branches: [master]  # Changed from 'main' to 'master'
+
+jobs:
+  # Job 1: Test and Build
+  test-and-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run linting
+        run: npm run lint --if-present
+        
+      - name: Run tests
+        run: npm test -- --watchAll=false --coverage --passWithNoTests
+        
+      - name: Build application
+        run: npm run build
+        
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4  # Updated to v4
+        with:
+          name: build-files
+          path: dist/
+
+  # Job 2: Deploy (runs only after test-and-build succeeds)
+  deploy:
+    needs: test-and-build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'  # Changed from 'main' to 'master'
+    
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4  # Updated to v4
+        with:
+          name: build-files
+          path: dist/
+          
+      - name: Deployment Ready
+        run: |
+          echo "✅ Build successful!"
+          echo "📦 Build files ready for deployment"
+          ls -la dist/
